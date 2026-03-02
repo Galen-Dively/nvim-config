@@ -1,9 +1,13 @@
+vim.g.mapleader = " "
+
 -- Settings for nvim-tree that need to be at begining according to github
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-
+-- Lazy Package Manager
 require("config.lazy")
+
+-- Color Scheme
 vim.cmd.colorscheme("habamax")
 
 -- Relative Line Numbers
@@ -13,8 +17,12 @@ vim.wo.relativenumber = true
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
-vim.expandtab = true
+vim.opt.expandtab = true
 
 -- nvim--tree cont
 vim.opt.termguicolors = true
 require("nvim-tree").setup()
+
+-- keymappings
+vim.keymap.set("n", "<leader>w", ':w<CR>', {desc = "Save File"})
+vim.keymap.set("n", "<leader>q", ":q<CR>", {desc = "Quit"})
