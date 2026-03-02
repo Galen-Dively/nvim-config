@@ -21,7 +21,7 @@ vim.opt.expandtab = true
 
 -- nvim--tree cont
 vim.opt.termguicolors = true
-require("nvim-tree").setup()
+require("nvim-tree")
 
 -- keymappings
 vim.keymap.set("n", "<leader>w", ':w<CR>', {desc = "Save File"})
