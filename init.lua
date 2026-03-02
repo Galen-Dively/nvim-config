@@ -8,7 +8,9 @@ vim.g.loaded_netrwPlugin = 1
 require("config.lazy")
 
 -- Color Scheme
-vim.cmd.colorscheme("habamax")
+-- vim.cmd.colorscheme("habamax") - old color theme
+-- { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+vim.cmd.colorscheme("catppuccin-mocha")
 
 -- Relative Line Numbers
 vim.wo.relativenumber = true
