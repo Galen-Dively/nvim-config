@@ -13,6 +13,7 @@ require("config.lazy")
 vim.cmd.colorscheme("catppuccin-mocha")
 
 -- Relative Line Numbers
+vim.opt.number = true
 vim.wo.relativenumber = true
 
 -- Tab Spacing
@@ -26,13 +27,12 @@ vim.opt.termguicolors = true
 require("nvim-tree")
 
 -- keymappings
-vim.keymap.set("n", "<leader>w", ':w<CR>', {desc = "Save File"})
-vim.keymap.set("n", "<leader>q", ":q<CR>", {desc = "Quit"})
-vim.keymap.set("n", "<leader>qq", ":q!", {desc = "Override Quit"})
+vim.keymap.set("n", "<leader>w", ':w<CR>', { desc = "Save File" })
+vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
+vim.keymap.set("n", "<leader>qq", ":q!", { desc = "Override Quit" })
 
 -- navigation keymaps
-vim.keymap.set("n", "<leader><Left>", "0") -- Begining of Line
+vim.keymap.set("n", "<leader><Left>", "0")  -- Begining of Line
 vim.keymap.set("n", "<leader><Right>", "$") -- End of line
-vim.keymap.set("n", "<leader><Up>", "gg") -- Start of file
-vim.keymap.set("n", "<leader><Down>", "G") -- End of file
-
+vim.keymap.set("n", "<leader><Up>", "gg")   -- Start of file
+vim.keymap.set("n", "<leader><Down>", "G")  -- End of file
