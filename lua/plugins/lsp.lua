@@ -6,13 +6,22 @@ return {
       "williamboman/mason-lspconfig.nvim",
     },
     config = function()
-      local lspconfig = require("lspconfig")
       local capabilities = require("blink.cmp").get_lsp_capabilities()
 
-      local servers = { "lua_ls", "pyright", "ts_ls" }
-      for _, server in ipairs(servers) do
-        lspconfig[server].setup({ capabilities = capabilities })
-      end
+      vim.lsp.config("pyright", {
+        capabilities = capabilities,
+        settings = {
+          python = {
+            analysis = {
+              typeCheckingMode = "basic",
+              autoSearchPaths = true,
+              useLibraryCodeForTypes = true,
+            },
+          },
+        },
+      })
+
+      vim.lsp.enable({ "pyright" })
     end,
   },
   {
